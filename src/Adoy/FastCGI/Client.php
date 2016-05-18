@@ -478,7 +478,6 @@ class Client
             $request .= $this->buildPacket(self::STDIN, $stdin, $id);
         }
         $request .= $this->buildPacket(self::STDIN, '', $id);
-
         if (fwrite($this->_sock, $request) === false || fflush($this->_sock) === false) {
 
             $info = stream_get_meta_data($this->_sock);
