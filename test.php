@@ -7,7 +7,9 @@
  */
 define('FCGI_HOST', '127.0.0.1');
 define('FCGI_PORT', 9000);
-define('FCGI_SCRIPT_FILENAME', '/Users/ruansheng/PhpstormProjects/test/property/demo.php');
+//define('FCGI_SCRIPT_FILENAME', '/Users/ruansheng/PhpstormProjects/test/property/demo.php');
+define('FCGI_SCRIPT_FILENAME', '/Users/ruansheng/phpstormProjects/test/array/1.php');
+
 define('FCGI_REQUEST_METHOD', 'GET');
 define('FCGI_REQUEST_ID', 1);
 
