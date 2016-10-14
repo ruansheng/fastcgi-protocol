@@ -557,7 +557,8 @@ class Client
 
             // We must reset timeout but it must be AFTER we get info
             $this->set_ms_timeout($this->_readWriteTimeout);
-
+            //echo '<pre>';
+            //    print_r($info);
             if ($info['timed_out']) {
                 throw new TimedOutException('Read timed out');
             }

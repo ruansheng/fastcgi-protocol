@@ -20,7 +20,6 @@ use Adoy\FastCGI\Client;
  * @author      Remi Collet <remi@famillecollet.com>
  * @version     1.0
  */
-
 /*
 if (!isset($_SERVER['argc'])) {
     die("Command line only\n");
@@ -69,14 +68,14 @@ echo "Call: $uri\n\n";
 echo $client->request($params, false)."\n";
 */
 
-
 $client = new Client(
 	(isset($url['host']) ? $url['host'] : 'localhost'),
 	(isset($url['port']) ? $url['port'] : 9000));
 
+$data = 'name=ruansheng';
 $params = array(
 	'GATEWAY_INTERFACE' => 'FastCGI/1.0',
-	'REQUEST_METHOD'    => 'GET',
+	'REQUEST_METHOD'    => 'POST',
 	'SCRIPT_FILENAME'   => '/Users/ruansheng/PhpstormProjects/test/property/t.php',
 	'SCRIPT_NAME'       => '/property/t.php',
 	'QUERY_STRING'      => '',
@@ -89,10 +88,10 @@ $params = array(
 	'SERVER_PORT'       => '80',
 	'SERVER_NAME'       => php_uname('n'),
 	'SERVER_PROTOCOL'   => 'HTTP/1.1',
-	'CONTENT_TYPE'      => '',
-	'CONTENT_LENGTH'    => 0
+	'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+	'CONTENT_LENGTH' => strlen($data),
 );
 //print_r($params);
 echo "Call: /property/t.php\n\n";
-echo $client->request($params, false)."\n";
+echo $client->request($params, $data)."\n";
 
